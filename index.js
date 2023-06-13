@@ -120,3 +120,22 @@ let getPosNumbers = (numbers) => {
 // ●	If the final result is going to be longer than 140 characters, it should return false.
 // ●	If the input or result is an empty string, it should return false
 
+function generateHashtag(inp) {
+   if(!inp || inp.trim() === ""){
+      return false;
+   }
+   const words = inp.split (" ");
+   
+   const capitalizedWords = words.map((word) => word.charAt(0).toUpperCase() + word.slice(1));
+   const hashtag = "#" + capitalizedWords.join(" ");
+
+   if (hashtag > 140){
+      return false;
+   }
+   console.log(hashtag);
+}
+const inp = "hello my dear people of God, its been a while. Hope you all are doing well?";
+generateHashtag(inp);
+
+// Question 8: TestCase:
+// #Hello My Dear People Of God, Its Been A While. Hope You All  Are Doing Well?
